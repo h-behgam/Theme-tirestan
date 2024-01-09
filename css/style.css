@@ -1,0 +1,682 @@
+/*!
+ *   Created on : Apr 9, 2023, 5:51:35 PM
+ *   Author     : Mohammad Hadi Behgam
+ *   Email      : h.behgam@gmail.com
+ *   Tel        : 09379874085
+*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;box-sizing:border-box}
+html{line-height:1.15;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Yekan Bakh!important;font-weight:400;direction:rtl}
+main{display:block}
+h1{font-size:2em;margin:.67em 0}
+hr{box-sizing:content-box;height:0;overflow:visible}
+pre{font-family:monospace,monospace;font-size:1em}
+a{background-color:transparent;text-decoration:none}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}
+code,kbd,samp{font-family:monospace,monospace;font-size:1em}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-.25em}
+sup{top:-.5em}
+img{border-style:none}
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
+button,input{overflow:visible}
+button,select{text-transform:none}
+[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}
+[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}
+[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}
+nav ul{list-style:none;padding:0;margin:0}
+fieldset{padding:.35em .75em .625em}
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+progress{vertical-align:baseline}
+textarea{overflow:auto}
+[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+details{display:block}
+summary{display:list-item}
+template{display:none}
+[hidden]{display:none}
+@font-face{font-family:Yekan Bakh;font-style:normal;font-weight:400;src:url(../font/woff/YekanBakhFaNum-Regular.woff) format("woff"),url(../font/woff2/YekanBakhFaNum-Regular.woff2) format("woff2"),url(../font/TTF/YekanBakhFaNum-Regular.ttf) format("ttf"),url(../font/OTF/YekanBakhFaNum-Regular.otf) format("otf")}
+@font-face{font-family:Yekan Bakh;font-style:normal;font-weight:700;src:url(../font/woff/YekanBakhFaNum-Bold.woff) format("woff"),url(../font/woff2/YekanBakhFaNum-Bold.woff2) format("woff2"),url(../font/TTF/YekanBakhFaNum-Bold.ttf) format("ttf"),url(../font/OTF/YekanBakhFaNum-Bold.otf) format("otf")}
+:root{--whith:#fff;--footer:#d9d9d9;--mainGray:#54585a;--gray1:#878787;--gray2:#404040;--mainRed:#ed3024}
+.gradient{background:#bb554f;background:linear-gradient(90deg,rgba(187,85,79,1) 0,rgba(211,67,58,1) 35%,rgba(237,48,36,1) 100%)}
+.swiper-container{width:100%;height:100%}
+.swiper-slide{text-align:center;font-size:18px;background:#fff;display:flex;justify-content:center;align-items:center;min-height:100px}
+.swiper-slide img{display:block;width:100%;height:100%;object-fit:cover}
+main section.slider{position:relative;height:100%}
+.wrappers{max-width:1440px;margin:0 auto}
+.wrapper{padding:20px 100px}
+.wWrapper{padding:0 100px}
+.hWrapper{padding:20px 0}
+.wrapper-slider2{max-width:640px;position:relative;margin:5px auto 20px auto}
+.swiper-rtl .swiper-button-next,div.wrapper-slider2 .swiper-button-prev{left:var(--swiper-navigation-sides-offset,-150px);right:auto;background:linear-gradient(260.24deg,#ed3024 1.9%,#d3433a 37.97%,#bb554f 100%);width:55px;height:55px;border-radius:50%;color:var(--whith)}
+.swiper-rtl .swiper-button-prev,div.wrapper-slider2 .swiper-button-next{right:var(--swiper-navigation-sides-offset,-150px);left:auto;background:linear-gradient(260.24deg,#ed3024 1.9%,#d3433a 37.97%,#bb554f 100%);width:55px;height:55px;border-radius:50%;color:var(--whith)}
+.swiper-rtl .swiper-button-prev::after,div.wrapper-slider2 .swiper-button-next::after{font-size:20px}
+.swiper-rtl .swiper-button-next::after,div.wrapper-slider2 .swiper-button-prev::after{font-size:20px}
+.block{display:block!important}
+header div#headerTop{display:flex;flex-direction:row;justify-content:space-between}
+header div#headerTop div#headerTopRight{width:70%}
+header div#headerTop div#headerTopLeft{width:48%;display:flex;flex-direction:row;justify-content:space-between;margin-left:10px}
+header div#headerTop div#headerTopLeft div#headerTopLeftAddress,header div#headerTop div#headerTopLeft div#headerTopLeftHelp{display:flex}
+header div#headerTop div#headerTopLeft div.headerTopLeftImage{background-color:var(--mainRed);border-radius:8px;width:54px;height:54px;display:flex;padding:8px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);margin-left:5px}
+header div#headerTop div#headerTopLeft div.headerTopLeftP{height:54px;padding:3px 3px;display:flex;flex-direction:column;justify-content:space-between}
+header div#headerTop div#headerTopLeft div.headerTopLeftP{font-size:90%}
+header div#headerTop div#headerTopLeft div.headerTopLeftP a.address{font-weight:700;color:#000}
+header div#bottom{background-color:var(--mainGray);position:relative}
+header div#bottom div.wrappers div ul{list-style:none;background-color:var(--mainGray)}
+header div#bottom div.wrappers div ul li{display:inline-block;position:relative}
+header div#bottom div.wrappers div ul li a{color:var(--whith);display:block;padding:13px 20px}
+header div#bottom div.wrappers div ul li a span{position:relative;top:4px;margin-right:4px}
+header div#bottom div.wrappers div div.menu-main-menu-container ul li>ul{display:none;visibility:hidden;width:200px;transition:all .3s ease-in-out,transform .3s;z-index:20}
+header div#bottom div.wrappers div div.menu-main-menu-container ul li:hover>ul{display:block;visibility:visible;width:200px;animation:fade-in .3s}
+@-webkit-keyframes fade-in{
+from{opacity:0}
+to{opacity:1}
+}
+@keyframes fade-in{
+from{opacity:0}
+to{opacity:1}
+}
+header div#bottom div.wrappers div ul li ul{position:absolute}
+header div#bottom div.wrappers div ul li ul li{display:block}
+header div#bottom div.wrappers div ul ul ul{position:absolute;right:200px;top:0}
+header div#bottom div.wrappers{display:flex;padding:0 10px 0 30px}
+header div#bottom div.wrappers div{background-color:var(--mainGray)}
+header div#bottom div.wrappers>div:first-child{flex-shrink:0;flex-grow:6}
+header div#bottom div.wrappers>div:last-child{display:flex;justify-content:flex-end;flex-shrink:0;flex-grow:3}
+header div#bottom div.wrappers div div img#shoppingcartPic{width:34px}
+header div#bottom div.wrappers div div.shoppingCartImg{display:flex;align-items:center;position:relative;margin-right:15px}
+header div#bottom div.wrappers div div.shoppingCartImg a{display:flex}
+header div#bottom div.wrappers div div.shoppingCartImg span#shoppingCartNumber{position:absolute;top:5px;left:-6px;width:16px;height:16px;background-color:var(--mainRed);padding:2px 2px 2px 1px;text-align:center;border-radius:35px;font-size:80%}
+div#bottom a.icon{display:none}
+#searchform{position:relative}
+#searchform p{font-size:0}
+#shoppingCartInput{margin:0;padding:0;border:none;height:29px;width:0;transition:all .3s;border-radius:2px}
+header div#bottom div.wrappers div div.shoppingCartImg form#searchform input#shoppingCartInput.formShow{width:200px;border:none;padding:5px 5px 3px 0;outline:0}
+header div#bottom div.wrappers div div.shoppingCartImg form#searchform input#search-input{display:none;cursor:pointer;width:21px;border:none;padding:5px 5px 3px 0;outline:0;background:url(/wp-content/themes/tirestan/image/icon/search-icon.png) no-repeat;background-size:20px 20px;position:absolute;top:9px;left:4px}
+header div#bottom div.wrappers div div.shoppingCartImg img#shoppingCartIcon{margin-right:10px;cursor:pointer}
+section.help{background-color:var(--mainGray)}
+section.help.wrapper div.wrappers{display:flex;flex-direction:row;justify-content:space-between}
+section.help.wrapper div#delivery,section.help.wrapper div#price,section.help.wrapper div#resellers{display:flex;width:30%}
+section.help.wrapper div#delivery div,section.help.wrapper div#price div,section.help.wrapper div#resellers div{padding:18px;display:flex;flex-direction:column;justify-content:space-between;width:100%}
+section.help.wrapper div#delivery div p,section.help.wrapper div#price div p,section.help.wrapper div#resellers div p{color:#fff}
+section.works{padding:50px 15px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;background:#bb554f;background:linear-gradient(90deg,rgba(187,85,79,1) 0,rgba(211,67,58,1) 35%,rgba(237,48,36,1) 100%);overflow:hidden}
+section.works div.works-wrapper{width:1440px;margin:0 auto}
+section.works img{width:auto;height:auto}
+footer{background-color:var(--footer)}
+footer div.wrappers{display:flex;flex-direction:row;gap:30px;justify-content:space-between;padding:25px 15px}
+footer h3{font-size:16px;margin-bottom:17px}
+footer div.wrappers div#footerAbout{width:55%}
+footer div.wrappers div.footer-leftside{width:21%}
+footer div.wrappers div#footerAbout div.aboute-up{margin-bottom:60px}
+footer div.wrappers div#footerAbout div.aboute-up h3{color:var(--mainRed);font-size:20px}
+footer div.wrappers div#footerAbout div.aboute-up p{width:100%;line-height:1.6}
+footer div.wrappers div#footerAbout div.aboute-down{display:flex;justify-content:space-between}
+footer div.wrappers div#footerAbout div.aboute-down div.right{display:flex;flex-direction:row;gap:50px}
+footer div.wrappers div#footerAbout div.aboute-down ul{list-style:none;line-height:1.6}
+footer div.wrappers div#footerAbout div.aboute-down ul li a{color:#000}
+footer div.wrappers div.footer-leftside div.socialmedia{display:flex;flex-direction:column;gap:5px}
+footer div.wrappers div.footer-leftside div.socialmedia div.socials{height:55px;display:flex;flex-direction:row;gap:20px}
+footer div.wrappers div.footer-leftside div.socialmedia div.socials a{width:40px;height:40px;display:inline-flex}
+footer div.wrappers div.footer-leftside div.socialmedia div.socials a img{width:100%;height:fit-content}
+footer div.wrappers div.footer-leftside h3{text-align:center}
+footer div.wrappers div.footer-leftside div.address p.address{margin-bottom:10px}
+footer div.wrappers div.footer-leftside div.logos{display:flex;flex-direction:row;gap:5px;overflow:hidden}
+footer div.wrappers div.footer-leftside div.logos div.logo{width:100px;height:100px}
+footer div.wrappers div.footer-leftside div.logos div.logo a.image img.pic{width:100%}
+footer div.wrappers div.footer-leftside hr{height:4px;color:#a0a0a0;background-color:#a0a0a0;border:none;border-radius:7px;margin:15px 0 6px 0}
+section.whoToBuy2{background-color:#d9d9d9}
+section.whoToBuy div.whoToBuyMain{background-color:var(--gray1);display:flex;justify-content:center;align-items:center;height:300px;border-radius:15px;margin:10px 0;position:relative}
+section.whoToBuy div.whoToBuyMain:hover{background-color:var(--footer);transition:all .3s ease-in-out}
+section.whoToBuy div.whoToBuyMain:hover p{color:var(--gray2);transition:all .3s ease-in-out}
+section.whoToBuy div.whoToBuyMain2{background-color:#d9d9d9;border-radius:0;margin:0 0}
+section.whoToBuy div.whoToBuyMain p.pBlack{color:#000}
+section.whoToBuy div.whoToBuyMain p{font-weight:700;font-size:400%;color:#fff}
+section.whoToBuy div.whoToBuyMain img#who1{position:absolute;height:55px;right:237px;top:44px}
+section.whoToBuy div.whoToBuyMain img#scroll-down{width:40px;vertical-align:-15px;margin-right:15px}
+section.whoToBuy div.whoToBuyMain img#who2{position:absolute;height:70px;right:136px;top:162px}
+section.whoToBuy div.whoToBuyMain img#who3{position:absolute;height:70px;left:80px;top:49px;transform:scaleX(-1) rotate(0)}
+section.needHelp{margin:70px auto}
+section.needHelp.wrappers div.needHelpMains{position:relative;display:flex;align-items:center;justify-content:flex-end}
+section.needHelp.wrappers div.needHelpmain{background:#bb554f;background:linear-gradient(90deg,rgba(187,85,79,1) 0,rgba(211,67,58,1) 35%,rgba(237,48,36,1) 100%);height:227px;color:#fff;border-radius:26px;width:100%;display:flex;flex-direction:column;justify-content:center;padding-right:100px}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain h3{font-size:200%;margin-bottom:35px}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain div.needHelpP button{background-color:#fff;font-weight:700;border:none;padding:12px 15px;border-radius:20px;margin-right:20px}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain div.needHelpP button::after{content:url(../image/icon/arrowleft2.png);display:inline-block;width:10px;height:15px;vertical-align:middle;margin-right:7px}
+section.needHelp.wrappers div.needHelpMains img{position:absolute}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain div.needHelpP{display:flex;align-items:center}
+section.relatedPost{margin:30px auto;padding:0 10px}
+section.relatedPost div.wrappers div.relatedPostTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+section.relatedPost div.wrappers div.relatedPostTop .relatedPostTopLeft a{color:var(--mainRed)}
+section.relatedPost div.wrappers div.relatedPostTop div.relatedPostTopRight{display:flex;align-items:center}
+section.relatedPost div.wrappers div.relatedPostBottom{display:flex;flex-direction:row;justify-content:space-between}
+section.relatedPost div.wrappers div.relatedPostBottom div.relatedPostCard{background-color:#d9d9d9;width:384px;margin-bottom:15px;border-radius:12px}
+section.relatedPost div.wrappers div.relatedPostBottom div.relatedPostCard div.relatedPostCardImg{background-color:#e8e8e8;border-radius:12px 12px 8px 8px;text-align:center;padding:20px 0}
+section.relatedPost div.wrappers div.relatedPostBottom div.relatedPostCard h2{margin:20px auto;text-align:center;font-size:120%}
+main section.relatedPost div.wrappers div.relatedPostBottom div.relatedPostCard h2 a{color:#000}
+section.relatedPost div.wrappers div.relatedPostBottom div.relatedPostCard p{padding:10px 30px;line-height:1.7;text-align:justify;margin-bottom:15px}
+section.whoToBuyDetails{background-color:#d9d9d9;display:none;margin-bottom:20px}
+section.whoToBuyDetails.block{display:block}
+section.whoToBuyDetails div.wrappers{position:relative}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg:after{content:"";width:80px;height:2332px;background:url(../image/icon/vector5.png) 0 0 no-repeat;top:37px;right:5px;position:absolute;display:inline-block}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard{display:flex;justify-content:space-between;padding:20px 60px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent{width:50%}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent div.whoToBuyDetailsTitle{display:flex;align-items:center;margin-right:0;z-index:2;margin-bottom:50px;position:relative}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent div.whoToBuyDetailsTitle div{width:40px;height:40px;background-color:red;border-radius:30px;text-align:center;padding:7px 7px 14px 7px;font-size:200%;color:var(--whith)}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent p{line-height:2.5;font-size:115%}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent div.whoToBuyDetailsTitle h4{margin-right:10px;margin-right:10px;font-size:200%;font-weight:400}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails1{margin-bottom:112px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails2{margin-bottom:105px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsPart4{text-align:center;margin-top:80px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsPart4 h2{margin:50px 0 163px 0;font-size:250%;font-weight:400}
+section.sale div.wrappers div.saleMain{display:flex}
+section.sale div.wrappers .saleMainSearch{padding:20px 0}
+section.sale div.wrappers div.saleMain div.saleMainRight{padding:20px 0 0 0;width:330px;height:730px;background-color:#d9d9d9;border-radius:26px;text-align:center;min-width:321px}
+section.sale div.wrappers div.saleMain div.saleMainRight div.saleMainRightTitle{display:flex;align-items:center;justify-content:center;margin:100px 0 180px auto}
+section.sale div.wrappers div.saleMain div.saleMainRight div.saleMainRightTitle h3{font-size:200%}
+section.sale div.wrappers div.saleMain div.saleMainRight>img{margin-top:70px}
+section.sale div.wrappers div.saleMain div.saleMainRight h3{font-size:300%}
+section.sale div.wrappers div.saleMain div.saleMainRight>h3:nth-child(2){margin:40px 0 30px 0}
+section.sale div.wrappers div.saleMain div.saleMainRight>h3:nth-child(3){margin-bottom:150px}
+section.sale div.wrappers div.saleMain div.saleMainRight button.saleMainButton{border:none;background-color:var(--mainRed);padding:12px 25px;border-radius:30px;color:#fff;cursor:pointer}
+section.sale div.wrappers div.saleMain div.saleMainLeft{padding:20px 20px 20px 0;display:flex;flex-wrap:wrap;justify-content:space-evenly;width:100%}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard{background-color:#d9d9d9;width:500px;height:220px;border-radius:26px;display:flex;margin-bottom:20px}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardImg{display:flex;justify-content:center;align-items:center;border:1px solid #d9d9d9;background-color:#fff;border-radius:0 26px 26px 0}
+section.sale div.wrappers div.saleMain div.saleMainLeft div.saleMainLeftCard div.saleMainLeftCardImg img{width:150px;height:auto}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails{display:flex;flex-direction:column;justify-content:center;padding:20px 10px;width:100%}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails div.price,section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails h2,section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails h3{margin-bottom:15px}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails h3{font-weight:400}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails h2 a{font-size:85%;color:#000}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails div.specs{margin-bottom:10px;background-color:#fff;display:flex;align-items:center;width:fit-content;padding:5px;border-radius:8px}
+div.specs{margin-bottom:10px;background-color:#fff;display:flex;align-items:center;width:fit-content;padding:5px;border-radius:8px}
+div.specs *{margin-left:8px;height:fit-content}
+div.specs img{display:block}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails div.price{display:flex;align-items:center}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails div.price p{display:flex;justify-content:space-between;width:100%;align-items:center}
+section.sale div.wrappers div.saleMain div.saleMainLeft div.saleMainLeftCard div.saleMainLeftCardDetails div.price p span.price{margin-right:10px}
+section.sale div.wrappers div.saleMain div.saleMainLeft div.saleMainLeftCard div.saleMainLeftCardDetails div.price p span.price span.woocommerce-Price-amount.amount bdi{display:flex;flex-direction:row-reverse}
+section.sale div.wrappers div.saleMain div.saleMainLeft div.saleMainLeftCard div.saleMainLeftCardDetails div.price span.discount{background-color:var(--mainRed);padding:4px 4px 0 5px;border-radius:7px;margin-left:30px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+p.verifyred{color:var(--mainRed);font-size:120%}
+div.verifymainTop{padding:40px 20px;background-color:#eaeaea;border-radius:12px;margin:40px 0;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+div.verifymainTop div.verifyTop{position:relative;text-align:center}
+div.verifymainTop div.verifyTop div.back{display:flex;align-items:center;position:absolute;top:0;left:14px}
+div.verifymainTop div.verifyTop a{margin-left:5px;color:var(--mainRed)}
+div.verifymainTop div.verifyMid{display:flex;justify-content:center;align-items:end}
+div.verifymainTop div.verifyMid *{margin-left:5px}
+div.verifymainBottom div.verifymainBottomRight div.vmbrProduct{margin-top:20px;padding:20px;background-color:#eaeaea;border-radius:12px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+div.product{margin-bottom:20px;padding:0 10px}
+div div.productTop{display:flex;padding:20px 0;justify-content:space-between;flex-wrap:wrap}
+div div.productTop p.sale{position:absolute}
+div div.productTop .summary{max-width:570px;width:570px;line-height:2;height:450px}
+.addToCardTop>div img{margin-left:10px}
+div div.productTop figure img{display:block;width:250px;height:auto}
+div div.productTop div.addToCard{width:400px;min-width:400px;height:450px;background-color:#eaeaea;border-radius:12px;padding:20px;line-height:3;position:relative}
+div div.productTop div.addToCard div.addToCardTop{display:flex;justify-content:space-between}
+div div.productTop div.addToCard div.addToCardTop div{display:flex;align-items:center}
+div.free-delivery{display:flex;align-items:center}
+div div.productTop div.addToCard hr{background-color:var(--gray1)}
+div div.productTop div.addToCard p.stock.in-stock{display:none}
+div div.productTop div.addToCard div.price,div div.productTop div.addToCard div.quantity1,div div.productTop div.addToCard div.years,div.progress{display:flex;justify-content:space-between;align-items:center}
+div div.productTop div.addToCard div.price div:nth-child(1),div div.productTop div.addToCard div.quantity1 div:nth-child(1),div div.productTop div.addToCard div.years div:nth-child(1),div.progress div:first-child{display:flex;align-items:center}
+div div.productTop div.addToCard div.price div:nth-child(1) img,div div.productTop div.addToCard div.quantity1 div:nth-child(1) img,div div.productTop div.addToCard div.years div:nth-child(1) img,div.progress div img{margin-left:5px}
+div.progress progress{height:10px;border-radius:8px;border:1px solid var(--gray1)}
+div.progress-percentage-bar span.green{color:#3eb434;background-color:#3eb434}
+div.progress-percentage-bar span.orange{color:#eeaf31;background-color:#eeaf31}
+div.progress div p{margin-left:10px}
+div.progress-percentage-bar-wrap{width:160px}
+div.progress-percentage-bar{height:10px;border-radius:4px;background-color:#d9d9d9;border:1px solid #888}
+div.progress-percentage-bar span.progress-percentage{height:100%;display:block;border-radius:4px}
+.ts-tooltip-wrap{position:relative}
+.ts-tooltip{position:absolute;bottom:125%;left:50%;width:150px;padding:10px 12px;transform:translateX(-50%);animation:ts-tooltip-animation .3s;background-color:#2d3748;color:#f7fafc!important;font-size:11px!important;font-weight:400!important;text-align:right;line-height:26px;opacity:0;z-index:10;display:none}
+.ts-tooltip::before{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);border:5px solid;border-color:#2d3748 transparent transparent transparent}
+div.progress progress::-webkit-progress-bar{background-color:#3eb434;height:10px;border-radius:8px;border:1px solid var(--gray1)}
+div.progress progress::-webkit-progress-value{background-color:#3eb434;height:10px;border-radius:8px;border:1px solid var(--gray1)}
+div.progress progress::-moz-progress-bar{background-color:#3eb434;height:10px;border-radius:8px;border:1px solid var(--gray1)}
+p.return-to-shop{text-align:center}
+img#cart-empty{display:block}
+div div.productTop div.addToCard div.quantity1 button.single_add_to_cart_button{position:absolute;width:90%;height:53px;border-radius:8px;color:#fff;background-color:var(--mainRed);bottom:20px;left:50%;transform:translate(-50%,-50%)}
+div div.productTop div.addToCard div.price div:nth-child(1) p.price2{font-size:75%;margin-right:50px}
+div div.productTop div.addToCard div.price p.price{display:flex;flex-direction:column}
+div div.productTop div.addToCard div.price p.price bdi{display:flex;flex-direction:row-reverse;align-items:center;font-weight:700;font-size:115%}
+div div.productTop div.addToCard div.price p.price bdi span{font-size:75%;margin-right:5px;font-weight:400}
+.quantityBottom{width:102px;height:30px;display:flex;flex-direction:row-reverse;border-radius:50%}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield;text-align:center}
+.quantityBottom *{border:none;width:34px;height:30px;flex:1}
+.quantityBottom>p{width:0;flex:unset}
+.quantityBottom>div.out-of-stock{display:flex;justify-content:center;align-items:center}
+.quantityBottom button{cursor:pointer}
+.quantityBottom button:first-child{border-radius:15% 0 0 15%;color:red;background-color:#878787}
+.quantityBottom button:last-child{border-radius:0 15% 15% 0;color:green;background-color:#878787}
+div.productTop div.summary.entry-summary h1{margin:0}
+div.productTop div.summary.entry-summary h1 a{color:var(--gray2)}
+div.productTop div.summary.entry-summary div.product_meta{display:flex;align-items:center;justify-content:space-between}
+div.productTop div.summary.entry-summary div.product_meta span{margin:0}
+div.productTop div.summary.entry-summary div.batch{display:flex;align-items:center;justify-content:space-between}
+div.productTop div.summary.entry-summary div.batchRight{display:flex;align-items:center}
+div.productTop div.summary.entry-summary div.batchRight img{margin-left:10px}
+div.productTop div.summary.entry-summary div.batch div.specs{background-color:#e1e1e1;display:flex;width:fit-content;padding:6px 9px 5px 4px;border-radius:8px;align-items:center}
+.yith-wcbr-brands-logo a:last-child{display:flex}
+div.productTop div.summary.entry-summary hr{color:#b7c0c53d}
+div.productTop div.summary.entry-summary h3{color:var(--gray1);font-size:100%;font-weight:400}
+div.main-cart form.woocommerce-cart-form table tbody tr td.product-price span.CardSize,div.productTop div.summary.entry-summary h3 span.CardSize,div.saleMainLeftCardDetails h3.saleMainLeftCardSize span.CardSize{direction:ltr;display:inline-block}
+div.productTop div.summary.entry-summary h3 span{color:var(--gray2);margin-right:20px}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs{list-style:none;display:flex;margin-bottom:20px}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs li.active a{color:var(--mainRed);border-bottom:2px solid var(--mainRed)}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs li a{padding:17px 15px;display:block;color:#000;font-weight:700}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs a{position:relative}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs a:hover:after,header ul li a:hover:after{width:100%}
+div.woocommerce-tabs.wc-tabs-wrapper ul.tabs.wc-tabs a:after{content:"";position:absolute;height:2px;width:0;bottom:-.1rem;right:0;transition:.2s ease-in;background:var(--mainRed)}
+header ul li.active a{color:var(--mainRed);border-bottom:2px solid var(--mainRed)}
+header ul li a:after{content:"";position:absolute;height:2px;width:0;bottom:0;right:0;transition:.2s ease-in;background:var(--mainRed)}
+div.woocommerce-tabs{background-color:#eaeaea;border-radius:12px;padding:10px;margin:20px 0 30px 0;width:70%;float:right}
+section.related.products{margin-top:30px;clear:both}
+section.related.products ul.products{list-style:none;display:flex;justify-content:space-between;flex-wrap:wrap}
+section.related.products ul.products li img{width:200px;height:auto}
+section.related.products ul.products li h2{font-size:100%;font-weight:400;color:var(--gray2);margin-bottom:10px}
+section.related.products ul.products li a div.star-rating,section.related.products ul.products li a.button{display:none}
+div section.related.products ul li a span.price span.woocommerce-Price-amount bdi{display:flex;flex-direction:row-reverse;align-items:center;color:#000;font-weight:700;font-size:120%}
+div section.related.products ul li a span.price span.woocommerce-Price-amount bdi span{margin-right:10px;font-weight:400;font-size:65%}
+div div.woocommerce-tabs>div{padding:20px 40px;overflow:hidden}
+div div.woocommerce-tabs div.panel table{width:100%;text-align:right;margin:20px 100px 0 0}
+div div.woocommerce-tabs div.panel table tr{display:flex}
+div div.woocommerce-tabs div.panel table tr th{padding:14px;width:30%;color:var(--mainGray)}
+div div.woocommerce-tabs div.panel table tr td{padding:14px;width:50%;border-bottom:1px solid var(--gray1);color:var(--gray2)}
+div div.woocommerce-tabs div.panel table tr td a{color:var(--gray2)}
+.ts-product-performance-info{float:right;width:100%;padding:10px 0;color:#2d3748;font-size:14px;line-height:24px}
+.ts-product-performance{line-height:22px}
+.ts-box-title{float:right;width:100%;margin-bottom:15px;padding:15px 20px;border-bottom:1px solid #cbd5e0;color:#4a5568;font-size:16px;font-weight:700;text-align:right}
+.ts-product-box{float:right;width:100%;padding:20px 15px}
+.ts-product-box>div{float:right;width:100%;height:auto;font-size:14px;line-height:26px;text-align:right}
+.ts-product-performance-box{float:right;width:33.3333336%;height:auto;margin-top:5px;margin-bottom:10px;padding-right:40px}
+.ts-product-performance-box svg{float:right;width:80px;height:auto;margin:0 auto}
+.ts-product-performance-box:nth-child(2) span,.ts-product-performance-box:nth-child(3) span{margin-right:25px}
+.ts-product-performance-row{float:right;width:100%;margin-top:20px}
+.ts-product-performance-row svg{float:right;width:75px;height:75px;margin-left:10px}
+.ts-product-performance-box span{float:right;clear:right;position:relative;width:40px;height:35px;margin-top:10px;margin-right:50%;transform:translateX(50%);padding-top:8px;background-color:#1a202c;color:#fff;text-align:center;font-size:18px;font-weight:700}
+.ts-product-performance-box:nth-child(4) span{width:65px}
+.ts-product-performance-box span::after{content:"";position:absolute;top:0;left:100%;border:17px solid;border-color:transparent transparent transparent #000}
+.ts-product-performance-box span{clear:unset;margin-top:20px;margin-right:25px;transform:unset}
+.woocommerce-Tabs-panel div#reviews{line-height:2}
+.woocommerce-Tabs-panel div#reviews div#comments ol{list-style:none}
+.woocommerce-Tabs-panel div#reviews div#comments hr{color:#adadad4f;margin:15px 0 20px}
+.rhwoostar,.wc-layered-nav-rating .star-rating .rhwoostar{color:#e0dadf}
+.rh_woo_star .active,.wc-layered-nav-rating .star-rating .rhwoostar.active{color:#ff8a00}
+.rh_woo_star span{line-height:19px;font-size:20px;display:inline-block}
+.woo-rating-bars .rating-bar .rh_woo_star span{font-size:20px}
+.woo-rating-bars .rating-bar{margin-bottom:5px;display:table;width:100%}
+.woo-rating-bars .rating-bar>div{display:table-cell;padding:0 10px;vertical-align:middle;width:78%}
+.woo-rating-bars .rating-bar .star-rating-wrap{width:90px;padding:0}
+.woo-rating-bars .rating-bar .rating-count{width:20px}
+.woo-rating-bars .rating-bar .rating-percentage-bar{height:10px;border-radius:4px;background-color:#d9d9d9}
+.woo-rating-bars .rating-bar .rating-percentage{height:100%;background-color:#ff8a00;display:block;border-radius:4px}
+.rh_woo_star_big span{line-height:2.5;font-size:180%}
+.rateReview{display:flex}
+.rateReview .woo-avg-rating{width:20%;margin-top:50px}
+.rateReview .woo-avg-rating>span{font-size:100%;text-align:center}
+.rateReview .woo-rev-part{width:79%}
+div#reviews div#comments div.rateReview div.woo-avg-rating span.orangecolor{color:#ff8a00;margin-right:35px}
+ol li div.comment-text{width:100%;border:1px solid #bebebe;border-radius:14px;padding:10px}
+ol li{margin-bottom:20px}
+div#review_form form label{display:block}
+.comment-form-rating label{margin-left:10px}
+form#commentform.comment-form p.form-submit input#submit.submit{background-color:var(--mainRed);border-radius:8px;padding:8px;width:100%;color:var(--whith)}
+#reviews .comment-respond p{margin:0 0 10px 15px}
+p.stars:after{content:"";display:block;clear:both}
+p.stars span,page p.stars span{width:80px;height:16px;position:relative;float:right;background:url(../image/icon/star.png) repeat-x right 0}
+p.stars span a,page p.stars span a{float:right;position:absolute;right:0;top:0;width:16px;height:0;padding-top:16px;overflow:hidden;transition:all .4s ease-in-out}
+p.stars span a:focus,p.stars span a:hover{background:url(../image/icon/star.png) repeat-x left -16px}
+p.stars span a.active{background:url(../image/icon/star.png) repeat-x left -32px}
+p.stars span a.star-1{width:16px;z-index:10}
+p.stars span a.star-2{width:32px;z-index:9}
+p.stars span a.star-3{width:48px;z-index:8}
+p.stars span a.star-4{width:64px;z-index:7}
+p.stars span a.star-5{width:80px;z-index:6}
+.clearfix{clear:both}
+.comment-text .comment-textTop{display:flex;align-items:center}
+.comment-text .comment-textTop .comment-authorinfo{display:flex;align-items:center}
+.comment-text .comment-textTop div{margin-left:8px}
+.comment-text .comment-textTop div .comment-date,.comment-text .comment-textTop div.commentRole p{font-weight:400;font-size:90%;color:var(--mainGray)}
+.comment-text .comment-textTop div p.comment-authorname{margin-left:8px;font-size:110%;font-weight:400;color:var(--mainGray)}
+div#review_form{width:100%;border:1px solid #bebebe;border-radius:14px;padding:10px}
+div#review_form_wrapper div#review_form div#respond.comment-respond form div.comment-form-rating,div#review_form_wrapper div#review_form div#respond.comment-respond form p.comment-form-author,div#review_form_wrapper div#review_form div#respond.comment-respond form p.comment-form-email{float:right}
+div#review_form_wrapper div#review_form div#respond.comment-respond form p.comment-form-comment{clear:both}
+div#review_form_wrapper div#review_form div#respond.comment-respond form div.comment-form-rating p.stars{margin-top:7px}
+div#review_form_wrapper div#review_form div#respond.comment-respond form p.comment-form-comment textarea{width:100%;resize:none}
+div.content-products{display:flex;flex-direction:row-reverse}
+div.content-products div.woocommerce-products-left{width:80%;padding:20px}
+div.content-products div.woocommerce-products-right{width:20%;background-color:#e0e0e0;border-radius:9px;margin-top:20px;height:fit-content}
+div.content-products div.woocommerce-products-right div.header{padding:10px 20px;display:flex;justify-content:space-between;align-items:center;background-color:#cacaca}
+div.content-products div.woocommerce-products-right div.header h3{color:#000;font-weight:400;font-size:100%}
+div.content-products div.woocommerce-products-right div.header img{height:fit-content}
+div.content-products div.woocommerce-products-right div.main{padding:20px 20px}
+div.content-products div.woocommerce-products-right div.main div h4{font-weight:400;font-size:100%;margin:10px 0 20px 0}
+.woof_checkbox_instock_container .woof_container_inner{display:flex;align-items:center;flex-direction:row-reverse;justify-content:space-between;margin:24px 0 12px 0}
+.woof_checkbox_instock_container .woof_container_inner label{margin-right:-27px}
+div .chosen-container-single .chosen-single{background:#e0e0e0;width:90%;float:left}
+.chosen-container-single .chosen-drop{clear:both;width:90%}
+div.woof_submit_search_form_container button.button.woof_reset_search_form{width:100%;background-color:#54585a;color:var(--whith);border:none;padding:10px;border-radius:10px}
+.chosen-container-single .chosen-single span{font-size:100%;margin-right:8px}
+div .chosen-container-single .chosen-single div{left:0;right:unset;background-color:#54585a;width:25px;padding:0 0 0 7px}
+input[type=checkbox]{position:relative;width:56px;height:25px;-webkit-appearance:none;background:#e0e0e0;outline:0;border-radius:25px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);transition:.7s;border:1px solid #54585a}
+input:checked[type=checkbox]{background:#ed3024a3}
+input[type=checkbox]:before{content:"";position:absolute;width:15px;height:15px;border-radius:20px;top:4px;left:6px;background:#c1c1c1;transform:scale(1.1);transition:.5s}
+input:checked[type=checkbox]::before{left:35px}
+div.content-products div.woocommerce-products-left div.orderby-main{background-color:#d9d9d9;padding:10px;border-radius:10px;display:flex;align-items:center;margin-bottom:15px}
+div.content-products div.woocommerce-products-left div.orderby-main div.title{display:flex;align-items:center}
+div.content-products div.woocommerce-products-left div.orderby-main div.title img{width:24px;margin-left:10px}
+div.content-products div.woocommerce-products-left div.orderby-main form.woocommerce-ordering{float:unset;margin:0}
+div.content-products div.woocommerce-products-left div.orderby-main form.woocommerce-ordering ul{display:flex;list-style:none}
+div.content-products div.woocommerce-products-left div.orderby-main form.woocommerce-ordering ul li.actived a{color:var(--mainRed)}
+div.content-products div.woocommerce-products-left div.orderby-main form.woocommerce-ordering ul li a{padding:10px 20px;color:#000}
+div.content-products div.woocommerce-products-left ul.products{list-style:none}
+.woof.woof_sid.woof_sid_widget{overflow:clip;height:500px}
+div.content-products div.woocommerce-products-left .woocommerce ul.products li.product,div.content-products div.woocommerce-products-left .woocommerce-page ul.products li.product,div.content-products div.woocommerce-products-left ul.products li.product{background-color:#e6e6e6;float:unset;margin:0 0 20px 0;padding:0;position:relative;width:100%;margin-right:0;border-radius:10px}
+div.content-products div.woocommerce-products-left ul.products li.product div.produc-details div.produc-detailsright div.right>img{width:152px;height:auto}
+li.product div.produc-details{display:flex;justify-content:space-between}
+li.product div.produc-details div.produc-detailsright{display:flex}
+li.product div.produc-details div.produc-detailsright div.right div.batchRight{text-align:left}
+li.product div.produc-details div.produc-detailsright div.right div.batchRight img{width:auto}
+div.batchRight2,li.product div.produc-details div.produc-detailsright div.right div.batchRight2{text-align:left}
+div.batchRight2 span,li.product div.produc-details div.produc-detailsright div.right div.batchRight2 span{padding:11px 7px 0 7px;background-color:#ed3024;border-radius:50%;position:relative;bottom:35px;left:0;display:inline-block;width:35px;height:35px}
+li.product div.produc-details div.produc-detailsright div.left{padding:0 10px;line-height:1.7}
+li.product div.produc-details div.produc-detailsright div.left h2{font-size:110%;font-weight:400;padding:10px 0}
+li.product div.produc-details div.produc-detailsright div.left h3.saleMainLeftCardSize{padding:10px 0}
+li.product div.produc-details div.produc-detailsright div.left h3{font-size:100%;font-weight:400}
+li.product div.produc-details div.produc-detailsright div.left h2 a{color:#000}
+li.product div.produc-details div.produc-detailsright div.left div.batch div.specs{margin-bottom:0}
+li.product div.produc-details div.produc-detailsright div.left div.rh_woo_star span.numbers{font-size:75%;font-weight:400}
+div.content-products ul.products.columns-4 li div.produc-details div.produc-details-left{padding:10px;line-height:2;width:25%}
+div.content-products ul.products.columns-4 li div.produc-details div.produc-details-left div.shipping div{display:flex;align-items:center}
+div.produc-details div.produc-details-left div.shipping div p{margin-right:10px}
+div.produc-details-left h3.saleMainLeftCardSize{display:flex;align-items:center;justify-content:space-between;font-weight:400}
+ul.products.columns-4 li div.produc-details-left div.price{display:flex;justify-content:space-between;align-items:center;color:#000}
+ul.products.columns-4 li div.produc-details-left div.price p.price{color:#000;margin-bottom:0}
+ul.products.columns-4 li div.produc-details-left div.price p.price bdi{display:flex;flex-direction:row-reverse;align-items:center;font-weight:700;font-size:115%}
+ul.products.columns-4 li div.produc-details-left div.price p.price bdi span{font-size:75%;margin-right:5px;font-weight:400}
+.select select{appearance:none;outline:0;border:0;box-shadow:none;flex:1;padding:0 1em;color:#54585a;background-color:#d9d9d9;background-image:none;cursor:pointer}
+.select select::-ms-expand{display:none}
+.select{position:relative;display:flex;width:110px;height:37px;border-radius:9px;overflow:hidden}
+.select::after{content:"\25BC";position:absolute;top:-4px;left:0;padding:11px 12px 0 13px;background-color:#54585a;transition:.25s all ease;pointer-events:none;color:var(--whith)}
+.select:hover::after{color:#f39c12}
+div.produc-details div.produc-details-left div.quantity1 div.quantityBottom3 form.cart{position:relative;display:flex;align-items:center;justify-content:space-between;height:37px}
+div.produc-details div.produc-details-left div.quantity1 div.quantityBottom3 form.cart .quantity::after{content:"\25BC";position:absolute;top:0;right:44px;padding:5px 11px 0 12px;background-color:#54585a;transition:.25s all ease;pointer-events:none;color:var(--whith);border-radius:9px 0 0 9px}
+div.produc-details div.produc-details-left div.quantity1 div.quantityBottom3 form.cart .quantity input{background-color:#d9d9d9;height:36px;border:none;border-radius:0 9px 9px 0;width:40px}
+div.produc-details div.produc-details-left div.quantity1 div.quantityBottom3 form.cart .quantity input:focus{outline:0}
+p.stock.in-stock{display:none}
+div.produc-details div.produc-details-left div.quantity1 div.quantityBottom3 form.cart button{border-radius:8px;color:var(--whith);background-color:var(--mainRed);margin:0;font-size:90%;font-weight:400}
+.woocommerce .cart-collaterals .cart_totals,.woocommerce-page .cart-collaterals .cart_totals{float:unset;width:100%}
+main div.woocommerce div.wrappers div.main-cart{display:flex;justify-content:space-between;margin-bottom:20px}
+main div.woocommerce div.wrappers div.main-cart form.woocommerce-cart-form{width:69%;background-color:#eaeaea;border-radius:12px;padding:20px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+main div.woocommerce div.wrappers div.main-cart form table tbody img{width:100px;height:auto}
+main div.woocommerce div.wrappers div.main-cart form table tbody a{color:#54585a}
+main div.woocommerce div.wrappers div.main-cart div.cart-collaterals{width:29%;background-color:#eaeaea;border-radius:12px;padding:20px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+.woocommerce div table.shop_table{border:none;border-radius:unset}
+main div.woocommerce div.wrappers div.main-cart form table th.product-remove{padding:9px 0}
+main div.woocommerce div.wrappers div.main-cart form table th.product-remove span{display:flex;align-items:center;justify-content:center}
+div.woocommerce div.cart-collaterals table tbody tr td,div.woocommerce div.cart-collaterals table tbody tr th,div.woocommerce div.woocommerce-checkout-review-order table tbody tr td,div.woocommerce div.woocommerce-checkout-review-order table tbody tr th{padding:20px 12px}
+div.woocommerce div.cart-collaterals table tbody tr td,div.woocommerce div.woocommerce-checkout-review-order table tbody tr td{text-align:left}
+div.woocommerce div.cart-collaterals div.wc-proceed-to-checkout a,div.woocommerce form.checkout div#order_review div#payment div.place-order button#place_order{width:100%;text-align:center;background-color:var(--mainRed);display:flex;align-items:center;justify-content:center;border-radius:8px}
+main div.woocommerce div.wrappers div.main-cart form table td.product-remove{text-align:center}
+main div.woocommerce div.wrappers div.main-cart form table td.product-remove a{color:#fff;background-color:#878787;border-radius:7px;padding:4px 34px;text-align:left}
+div.woocommerce table tbody tr td.actions div.coupon{display:flex;justify-content:space-between}
+div.woocommerce table tbody tr td.actions div.coupon input{background-color:#eaeaea;border-radius:9px;border:1px solid #878787;padding:4px 7px;width:50%}
+div.woocommerce table tbody tr td.actions div.coupon button{background-color:#878787;border-radius:8px;padding:4px 30px;color:var(--whith);font-size:100%;font-weight:400}
+div.woocommerce form.checkout{display:flex;justify-content:space-between;margin-bottom:20px}
+div.woocommerce form.checkout div#customer_details{width:67%;display:flex;flex-direction:column;background-color:#eaeaea;border-radius:12px;padding:15px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+div.woocommerce form.checkout div#customer_details div.col-1{border-bottom:1px solid var(--gray2)}
+div.woocommerce form.checkout div#customer_details div.col-2{padding:20px 0;line-height:2}
+div.woocommerce form.checkout div#customer_details div.col-2 h3{font-weight:400}
+div.woocommerce form.checkout div#customer_details div.col-2 div p label{font-size:80%;margin-bottom:15px}
+div.woocommerce form.checkout div#customer_details div.col-2 div p textarea{border:1px solid #9d9d9d;border-radius:10px;background-color:#eaeaea;resize:none;height:130px;padding:10px}
+div.woocommerce form.checkout div#customer_details div.col-1,div.woocommerce form.checkout div#customer_details div.col-2{width:100%}
+div.woocommerce form.checkout div#customer_details div input{border:1px solid #9d9d9d;border-radius:10px;padding:9px;background-color:#eaeaea}
+div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-invalid .select2-container,div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-invalid input.input-text,div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-invalid select{background-color:#e1303226;border-color:var(--mainRed)}
+div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-validated .select2-container,div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-validated input.input-text,div.woocommerce form.checkout div#customer_details div.woocommerce-billing-fields p.form-row.woocommerce-validated select{border-color:#6dc22e}
+.woocommerce form .form-row.woocommerce-validated .select2-container,.woocommerce form .form-row.woocommerce-validated input.input-text,.woocommerce form .form-row.woocommerce-validated select{border-color:#6dc22e}
+div.woocommerce form.checkout div#order_review{background-color:#eaeaea;border-radius:12px;width:27%;padding:15px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+.select2-container--default .select2-selection--single{background-color:#eaeaea;border:1px solid #aaa;border-radius:10px;padding:6px;height:45px}
+.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:10px;right:9px;width:20px}
+.woocommerce ul.order_details{display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;background-color:#eaeaea;margin:30px auto;text-align:center;margin-top:50px;max-width:1440px;width:100%;padding:50px;border:1px solid #9d9d9d;border-radius:12px;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+div.woocommerce ul.order_details>li{border:1px solid #9d9d9d;border-radius:12px;padding:10px;background-color:#eaeaea;width:300px;line-height:2.5}
+.woocommerce ul.order_details>li:last-of-type{border:1px solid #9d9d9d}
+div.woocommerce div.receipt{background-color:#eaeaea;width:100%;max-width:1440px;padding:20px;margin:0 auto;text-align:center;border:1px solid #9d9d9d;border-radius:12px;font-size:120%;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+.gray{background-color:#e6e6e6!important}
+.shadow{-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+.radius-10{border-radius:10px}
+.hamburger{display:block;width:30px;height:30px;background-color:#d32f2f;position:relative;cursor:pointer}
+.hamburger span,.hamburger:after,.hamburger:before{content:" ";display:block;width:30px;height:2px;background-color:#000;transform:rotate(0);position:absolute;left:0;transition:all .3s ease-in-out}
+.hamburger:before{top:16px}
+.hamburger span{top:26px;opacity:1}
+.hamburger:after{bottom:22px}
+.hamburger.active span{opacity:0;top:25px;transform:rotate(90deg)}
+.hamburger.active::before{width:26px;top:15px;left:3px;transform:rotate(45deg)}
+.hamburger.active::after{width:26px;bottom:13px;left:3px;transform:rotate(-45deg)}
+.ts-container{margin:0;padding:0;border:0;box-sizing:border-box!important;font-size:100%;line-height:1}
+.ts-container a{text-decoration:none}
+.ts-container *,.ts-container ::after,.ts-container ::before{box-sizing:border-box!important}
+.ts-container{display:flex;width:100%;margin:0 auto;box-sizing:border-box;flex-flow:row wrap;justify-content:center;align-content:flex-start;align-items:flex-start}
+.ts-container-fluid{width:100%!important}
+.ts-container *{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}
+@media (min-width:640px){
+.ts-container{width:640px}
+}
+@media (min-width:768px){
+.ts-container{width:768px}
+}
+@media (min-width:1024px){
+.ts-tooltip-wrap:hover .ts-tooltip{display:block;opacity:.8}
+.ts-container{width:1024px}
+}
+@media (min-width:1280px){
+.ts-container{width:1280px}
+}
+@media (min-width:1408px){
+.ts-container{width:1408px}
+}
+.ts-row{width:100%;display:flex;flex-flow:row wrap;justify-content:center;align-content:flex-start;align-items:stretch}
+.ts-col-gap-5>.ts-column{padding:5px}
+.ts-col-gap-10>.ts-column{padding:10px}
+.ts-column{flex-grow:1;flex-shrink:1}
+.ts-col-4{flex-basis:33.3333333333%;max-width:33.3333333333%}
+.ts-col-6{flex-basis:50%;max-width:50%}
+.ts-col-12{flex-basis:100%;max-width:100%}
+.ts-select-100p{width:100%}
+.ts-select2{position:relative;height:34px;border:1px solid #858585;border-radius:5px;background-color:#fff;color:#555;cursor:pointer}
+.ts-select2 select{position:absolute;top:0;right:0;width:100%;height:100%;padding:0 10px 0 20px;border:none;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;background:0 0;font-size:14px;z-index:1}
+.ts-select2>span{position:absolute;top:-1px;left:-1px;width:20px;height:34px;border-radius:5px 0 0 5px;cursor:pointer}
+.ts-select2>span::after{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);border:5px solid;border-color:#858585 transparent transparent transparent}
+.ts-loading-wrap{position:fixed;top:0;right:0;width:100vw;height:100vh;background-color:rgba(0,0,0,.5);z-index:9999999999;display:none}
+.ts-loading{position:absolute;top:0;right:0;width:100%;height:100%;display:flex;align-items:center;align-content:center;justify-content:center}
+.ts-loading-item{width:74px;height:74px}
+.ts-search{max-width:360px!important;line-height:22px}
+.ts-search-header h3{padding:10px;background-color:rgba(0,0,0,.7);color:#fff;font-size:16px;text-align:center;font-weight:400}
+.ts-search-header .ts-search-header-tab{padding:15px 5px 5px;border:1px solid #a8b1b3;background-color:#ddd;text-align:center;cursor:pointer}
+.ts-search-header .ts-search-header-tab img{width:auto;height:auto;margin:0 auto}
+.ts-search-header .ts-search-header-tab-active{border-color:transparent;background-color:#fff;cursor:default}
+.ts-search-body{padding-bottom:20px!important;border-radius:0 0 5px 5px;background-color:#fff}
+.ts-search-tab{position:relative}
+.ts-search-tab::after{content:"";position:absolute;bottom:0;right:5%;width:90%;border-bottom:1px solid #bdbdbd}
+.ts-search-tab i{position:absolute;right:14%;bottom:0;border:8px solid;border-color:transparent transparent #bdbdbd transparent;transition:all .5s}
+.ts-search-tab div{padding:10px;text-align:center;cursor:pointer}
+.ts-search-tab div img{display:block;margin:5px auto 0;border:1px solid #718096;border-radius:4px;background-color:#e8e8e8}
+.ts-search-tab div.ts-search-tab-active img{border-color:#90cdf4}
+.ts-search-tab div span{display:block;color:#555;font-size:14px}
+.ts-search-content{padding-top:30px!important;display:none}
+.ts-search-content-specs{display:block}
+.ts-search-select-box{float:right;width:100%;text-align:center}
+.ts-search-select-box label{float:right;width:100%;color:#858585;font-size:14px;text-align:right}
+.ts-search-select-box>div.ts-select2{float:right;margin-top:5px}
+.ts-search-img-box{float:right;width:100%;text-align:center}
+.ts-search-img-box img{margin:10px auto 0}
+.ts-search-content-brand .ts-search-content-brand-item{text-align:center}
+.ts-search-content-brand .ts-search-content-brand-item img{margin:0 auto;max-width:80px;height:auto}
+.ts-search-submit{width:100%;padding:10px;border-radius:5px;background-color:#ed3024;color:#fff;font-size:14px;font-weight:700;text-align:center;cursor:pointer}
+.ts-search-content-brand .ts-search-submit-wrap{margin-top:30px}
+.ts-search-content-car .ts-search-submit{margin-top:30px}
+.woocommerce form .form-row .input-checkbox{display:inline-block}
+.woocommerce form .form-row label{color:#000;font-size:12px}
+div.woocommerce-terms-and-conditions-wrapper div.woocommerce-privacy-policy-text p{color:#000;font-size:12px}
+/*! CSS Used keyframes */
+@-webkit-keyframes fade-in{
+from{opacity:0}
+to{opacity:1}
+}
+@keyframes fade-in{
+from{opacity:0}
+to{opacity:1}
+}
+section.search-pro div.search-main{display:flex}
+.search-main .search-header{width:25%;min-width:360px!important}
+.search-main .search-body{padding:0 30px;color:#fff;width:50%}
+.search-main .search-footer{width:25%;min-width:408px!important}
+.search-main .search-body h3{margin:50px 0;font-size:260%;text-align:center;text-shadow:0 4px 4px #00000059}
+.search-main .search-body p{font-size:184%;font-weight:400;text-align:justify;line-height:1.5}
+.ts-shop-sidebar-item-header span{margin-left:10px;float:left;color:#000;font-size:17px;transition:all .5s;cursor:pointer}
+#ts-sidebar-close{display:none}
+.copyright{background-color:#acacac;padding:10px 0;text-align:center}
+.copyright a{color:#000}
+.fixed_navbar{position:fixed!important;z-index:1000;width:100%;left:242px;top:50px}
+.swiper-slide{background:0 0!important;opacity:.4;min-height:unset}
+.swiper-slide-active{opacity:1}
+.swiper-wrapper{align-items:center}
+section.order div.wrapper{border:3px solid #d9d9d9;background:#eaeaea;border-radius:12px;width:640px;height:752px;margin:auto}
+section.order div.wrapper div.order-box{display:flex;justify-content:center;flex-direction:column}
+section.order div.wrapper div.order-box>img{margin:50px 0}
+section.order div.wrapper div.order-box h2.title{font-size:200%;margin-bottom:30px}
+section.order div.wrapper div.order-box p.rec{font-size:120%;margin-bottom:30px}
+section.order div.wrapper div.order-box p.date{font-size:120%;margin-bottom:30px}
+section.order div.wrapper div.order-box p.details{font-size:120%;margin-bottom:30px}
+section.order div.wrapper div.order-box h2.title span.order-success{color:#239f40}
+section.order div.wrapper div.order-box h2.title span.order-failed{color:#cb3329}
+section.order div.wrapper div.order-box button{width:263px;height:67px;background:linear-gradient(260.24deg,#ed3024 1.9%,#d3433a 37.97%,#bb554f 100%);border-radius:12px;margin:0 auto;border:none;color:var(--whith);font-weight:700;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15)}
+section.order div.wrapper div.order-box a.success::after{content:url(../image/icon/receiptitem.png);display:inline-block;vertical-align:middle}
+section.order div.wrapper div.order-box a.failed::after{content:url(../image/icon/call.png);display:inline-block;vertical-align:middle}
+a.button-final{width:263px;height:67px;background:linear-gradient(260.24deg,#ed3024 1.9%,#d3433a 37.97%,#bb554f 100%);border-radius:12px;margin:0 auto;border:none;color:var(--whith);font-weight:700;-webkit-box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);box-shadow:1px 4px 3px 0 rgba(0,0,0,.15);display:flex;justify-content:center;align-items:center}
+@media screen and (max-width:1600px){
+.fixed_navbar{left:90px}
+}
+@media screen and (max-width:1366px){
+.fixed_navbar{left:10px}
+footer div.wrappers div#footerAbout{width:57%}
+footer div.wrappers div.footer-leftside{width:25%}
+}
+@media screen and (max-width:1280px){
+.fixed_navbar{left:10px}
+div.woocommerce-tabs{width:68%}
+}
+@media screen and (max-width:1200px){
+section.relatedPost div.wrappers div.relatedPostBottom{justify-content:space-around;flex-wrap:wrap}
+}
+@media screen and (max-width:1024px){
+.search-main .search-footer img{width:80%}
+.search-main .search-body h3{font-size:200%}
+.search-main .search-body p{font-size:150%;line-height:1}
+.search-main .search-footer{width:25%;min-width:286px!important}
+div.woocommerce-tabs{width:100%}
+#ts-sidebar-close{display:block}
+}
+@media screen and (max-width:900px){
+header div#headerTop div#headerTopRight{width:auto;padding-right:30px}
+div#bottom a.icon i{color:var(--whith)}
+div#bottom a.icon{display:inline-block;padding:9px 8px 5px}
+header div#bottom div.wrappers div ul{position:fixed;width:100%;left:-100%;height:1000px;z-index:100;transition:750ms}
+header div#bottom div.wrappers div ul.active{left:0}
+header div#bottom div.wrappers div ul li{display:block;position:relative;text-align:center}
+header div#bottom div.wrappers div div.menu-main-menu-container ul li:hover>ul{display:none}
+section.help.wrapper div.wrappers{flex-direction:column}
+section.help.wrapper div#delivery,section.help.wrapper div#price,section.help.wrapper div#resellers{border-bottom:1px solid var(--gray1);width:auto;justify-content:center;min-width:100%}
+section.help.wrapper div#delivery div,section.help.wrapper div#price div,section.help.wrapper div#resellers div{width:auto}
+section.search-pro div.search-main{padding:0 10px}
+section.whoToBuy div.whoToBuyMain p{font-size:300%}
+section.sale div.wrappers div.saleMain div.saleMainLeftCard{width:auto}
+header div#headerTop div#headerTopLeft{width:49%}
+header div#bottom div.wrappers>div:first-child{padding-right:20px}
+div div.productTop>div{margin-bottom:20px;border-bottom:2px solid #aaaa;padding-bottom:10px}
+div div.productTop .summary{max-width:unset;width:100%;line-height:2}
+div div.productTop .summary{height:unset}
+.swiper-rtl .swiper-button-next,div.wrapper-slider2 .swiper-button-prev{left:var(--swiper-navigation-sides-offset,10px);width:45px;height:45px}
+.swiper-rtl .swiper-button-prev,div.wrapper-slider2 .swiper-button-next{right:var(--swiper-navigation-sides-offset,10px);width:45px;height:45px}
+.swiper-rtl .swiper-button-prev::after,div.wrapper-slider2 .swiper-button-next::after{font-size:15px}
+.swiper-rtl .swiper-button-next::after,div.wrapper-slider2 .swiper-button-prev::after{font-size:15px}
+.search-main .search-footer{display:none}
+footer div.wrappers div#footerAbout{width:65%}
+footer div.wrappers div.footer-leftside{width:32%}
+}
+@media screen and (max-width:768px){
+header div#headerTop{justify-content:center}
+header div#headerTop div#headerTopLeft{display:none}
+section.whoToBuy div.whoToBuyMain p{font-size:250%}
+section.needHelp.wrappers div.needHelpmain{padding:10px}
+section.needHelp.wrappers div.needHelpMains img{width:28%}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain h3{font-size:150%}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain div.needHelpP{width:68%;flex-direction:column}
+section.needHelp.wrappers div.needHelpMains div.needHelpmain div.needHelpP button{margin-top:10px}
+div.whoToBuyDetailsCard>div:nth-child(2){width:50%}
+div.whoToBuyDetailsCard>div:nth-child(2) img{width:100%}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails1{margin-bottom:168px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails2{margin-bottom:206px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsPart4{margin-top:167px}
+section.sale div.wrappers div.saleMain{padding:0 10px 20px 10px}
+div div.productTop .summary{width:495px}
+div div.woocommerce-tabs>div{padding:10px}
+div div.woocommerce-tabs div.panel table{margin:0}
+div div.woocommerce-tabs div.panel table tr th{width:40%}
+div div.woocommerce-tabs div.panel table tr td{width:59%}
+div div.woocommerce-tabs>div{padding:20px 10px}
+.woo-rating-bars .rating-bar .star-rating-wrap{width:16%}
+.woo-rating-bars .rating-bar>div{width:73%}
+main div.woocommerce div.wrappers div.main-cart{padding:0 10px;flex-direction:column}
+main div.woocommerce div.wrappers div.main-cart form.woocommerce-cart-form{width:100%;padding:7px;margin-bottom:15px}
+main div.woocommerce div.wrappers div.main-cart div.cart-collaterals{width:100%;padding:7px}
+div.woocommerce form.checkout{padding:0 10px;flex-direction:column}
+div.woocommerce form.checkout div#customer_details{width:100%;margin-bottom:10px}
+div.woocommerce form.checkout div#order_review{width:100%}
+footer div.wrappers{flex-direction:column;gap:10px}
+footer div.wrappers div#footerAbout{width:100%}
+footer div.wrappers div.footer-leftside{width:100%}
+footer div.wrappers div#footerAbout div.aboute-down div.right{flex-direction:column}
+footer div.wrappers div#footerAbout div.aboute-down{flex-direction:column;flex-direction:column;align-items:center;margin-bottom:30px;text-align:center}
+footer div.wrappers div.footer-leftside div.socialmedia div.socials{justify-content:center}
+footer div.wrappers div.footer-leftside div.logos{justify-content:center}
+}
+@media screen and (max-width:500px){
+section.sale div.wrappers div.saleMain div.saleMainLeftCard div.saleMainLeftCardDetails div.price{flex-direction:column}
+section.sale div.wrappers div.saleMain div.saleMainLeft div.saleMainLeftCard div.saleMainLeftCardDetails div.price span.discount{display:none}
+.wrapper{padding:20px 10px}
+header div#bottom div.wrappers div div.shoppingCartImg form#searchform input#shoppingCartInput.formShow{width:150px!important}
+.search-main .search-header{width:auto;min-width:auto}
+.search-main .search-body{display:none}
+section.search-pro div.search-main{justify-content:center}
+section.whoToBuy div.whoToBuyMain p{font-weight:700;font-size:148%;color:#fff}
+section.sale div.wrappers div.saleMain{flex-direction:column;align-items:center}
+section.sale div.wrappers div.saleMain{padding:10px}
+section.works img{width:auto;height:14px;margin-left:10px}
+div.whoToBuyDetailsCard>div:nth-child(2){display:none}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard div.whoToBuyDetailsContent{width:100%}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsCard{padding:50px 20px 20px 10px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails1{margin-bottom:240px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div#whoToBuyDetails2{margin-bottom:200px}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsPart4 img{width:90%}
+section.whoToBuyDetails div.wrappers div.whoToBuyDetailsimg div.whoToBuyDetailsPart4{margin-top:170px}
+.woocommerce-product-gallery{width:100%}
+div div.productTop figure img{border:2px solid #ddd;border-radius:6px;margin:15px auto}
+div div.woocommerce-tabs>div{padding:20px 0}
+.rateReview{flex-direction:column}
+.rateReview .woo-avg-rating{text-align:center;width:100%}
+.rateReview .woo-rev-part{width:100%}
+.woo-rating-bars .rating-bar .star-rating-wrap{width:24%}
+.woo-rating-bars .rating-bar>div{width:54%}
+section.related.products ul.products{justify-content:center}
+.ts-product-performance-box span::after{content:unset}
+.ts-product-performance-box{padding-right:0}
+.woocommerce form .form-row-first,.woocommerce form .form-row-last,.woocommerce-page form .form-row-first,.woocommerce-page form .form-row-last{width:100%}
+table.shop_table_responsive tr #shipping_method{clear:both;margin-top:48px}
+div.verifymainTop div.verifyMid{flex-direction:column;align-items:center}
+div div.productTop div.addToCard{min-width:auto}
+section.sale div.wrappers div.saleMain div.saleMainLeft{padding:20px 0 20px 0}
+div.productTop div.summary.entry-summary h1{font-size:1.7em}
+}

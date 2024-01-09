@@ -1,0 +1,22 @@
+footer div.wrappers{display:flex}
+footer div#footerAbout{width:50%;display:flex;flex-direction:column}
+footer div#footerLinks1{width:25%;height:355px;overflow:hidden}
+footer div#footerLinks2{width:25%;height:355px;overflow:hidden}
+footer div.wrappers div#footerAbout div{display:flex;align-items:center}
+footer div.wrappers div#footerAbout p{width:78%;line-height:1.7}
+footer div#footerLinks1,footer div#footerLinks2,footer div.wrappers div#footerAbout{line-height:2.3}
+footer div.wrappers div#footerAbout div,footer div.wrappers div#footerAbout h3,footer div.wrappers div#footerAbout img,footer div.wrappers div#footerAbout p{margin-bottom:13px}
+footer div.wrappers div#footerAbout div.location p{margin-right:10px}
+footer div.wrappers div#footerAbout div.location p a{color:#000}
+footer div.wrappers div ul li{color:var(--mainRed);list-style:none}
+footer div.wrappers div ul li:before{content:"·";font-size:120px;vertical-align:text-top;line-height:42px;margin-right:-10px}
+footer div.wrappers div ul li a{color:#000}
+
+
+
+@media screen and (max-width:500px){
+    footer div.wrappers{flex-direction:column}
+    footer div#footerAbout,footer div#footerLinks1,footer div#footerLinks2{width:auto}
+    footer div#footerLinks3{display: none;}
+    footer div.wrappers div#footerAbout p{width:auto;line-height:1.7;text-align:justify}
+}
